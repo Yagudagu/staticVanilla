@@ -1,0 +1,12 @@
+{
+  "IsEncryped": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node"
+  },
+  "routes": [
+    {
+      "route": "/login",
+      "redirect": "/.auth/login/aad"
+    }
+  ]
+}
