@@ -12,5 +12,16 @@
       "route": "/something.html",
       "allowedRoles": ["authenticated"]
     }
-  ]
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/ebe0363c-d7a2-457a-90dd-34ff9d48b170/v2.0",
+          "clientIdSettingName": "699d2d9a-21ef-4598-899b-a47af42bec0d",
+          "clientSecretSettingName": "Soo-zd_~0RnfKCS95M8Bt~PEwE12_M-O.W"
+        }
+      }
+    }
+  }
 }
