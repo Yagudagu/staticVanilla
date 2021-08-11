@@ -7,6 +7,10 @@
     {
       "route": "/login",
       "redirect": "/.auth/login/aad"
+    },
+    {
+      "route": "/something.html",
+      "allowedRoles": ["authenticated"]
     }
   ]
 }
