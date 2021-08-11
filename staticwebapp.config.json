@@ -10,7 +10,7 @@
           "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
           "openIdIssuer": "https://login.microsoftonline.com/ebe0363c-d7a2-457a-90dd-34ff9d48b170/v2.0",
           "clientIdSettingName": "699d2d9a-21ef-4598-899b-a47af42bec0d",
-          "clientSecretSettingName": "Soo-zd_~0RnfKCS95M8Bt~PEwE12_M-O.W"
+          "clientSecretSettingName": "20141eee-4a43-4c5e-8d8a-196f9e9929dc"
         }
       }
     }
