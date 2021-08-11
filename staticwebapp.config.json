@@ -6,7 +6,7 @@
   "routes": [
     {
       "route": "/login",
-      "redirect": "/.auth/login/aad"
+      "redirect": "/.auth/login/azureActiveDirectory"
     },
     {
       "route": "/something.html",
