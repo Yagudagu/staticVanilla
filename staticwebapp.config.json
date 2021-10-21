@@ -10,7 +10,7 @@
     },
     {
       "route": "/logout",
-      "redirect": "/.auth/logout?post_logout_redirect_uri=https://thankful-ocean-06c19711e.azurestaticapps.net/another.html"
+      "redirect": "/.auth/logout?post_logout_redirect_uri=https://google.com"
     },
     {
       "route": "/something.html",
