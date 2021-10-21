@@ -10,11 +10,15 @@
     },
     {
       "route": "/logout",
-      "redirect": "/.auth/logout"
+      "redirect": "/.auth/logout?post_logout_redirect_uri=https://"
     },
     {
       "route": "/something.html",
       "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/another.html",
+      "allowedRoles": ["anonymous"]
     }
   ]
 }
