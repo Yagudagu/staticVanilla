@@ -10,7 +10,7 @@
     },
     {
       "route": "/logout",
-      "redirect": "/.auth/logout?post_logout_redirect_uri=https://google.com"
+      "redirect": "/.auth/logout?post_logout_redirect_uri=https://www.google.com"
     },
     {
       "route": "/something.html",
