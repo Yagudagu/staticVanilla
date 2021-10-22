@@ -61,7 +61,11 @@
 
       connection.start();
 
-      await connection.invoke("SendMessage", "jacob", "please work").then(e => console.log(e));
+      async function uploadFile() {
+        await connection
+          .invoke("SendMessage", "jacob", "please work")
+          .then((e) => console.log(e));
+      }
     </script>
   </body>
 </html>
