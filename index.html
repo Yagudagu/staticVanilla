@@ -67,9 +67,9 @@
         await connection.start();
 
         sleep(2000);
-
+        const something = "fuckaduck";
         try {
-          await connection.invoke("SendMessage", "please work");
+          await connection.invoke("SendMessage", something);
         } catch (err) {
           console.error(err);
         }
