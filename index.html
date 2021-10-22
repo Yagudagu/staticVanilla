@@ -68,9 +68,13 @@
 
         await sleep(2000)
           .then(() => {
-            connection.invoke("SendMessage", "jacob", "please work");
+            try {
+              await connection.invoke("SendMessage", "jacob", "please work");
+            } catch (err) {
+              console.error(err);
+            }
           })
-          .then((e) => console.log(e));
+          .then((e) => console.log("fuck if I know"));
       }
 
       startAndDo();
