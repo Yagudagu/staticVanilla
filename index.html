@@ -69,7 +69,7 @@
         sleep(2000);
 
         try {
-          connection.invoke("SendMessage", "jacob", "please work");
+          await connection.invoke("SendMessage", "please work");
         } catch (err) {
           console.error(err);
         }
