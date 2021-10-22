@@ -60,9 +60,11 @@
       // });
 
       async function startAndDo() {
-        await connection
-          .start()
-          .then(connection.invoke("SendMessage", "jacob", "please work"));
+        await connection.start();
+
+        await sleep(2000).then(
+          connection.invoke("SendMessage", "jacob", "please work")
+        );
       }
 
       startAndDo();
