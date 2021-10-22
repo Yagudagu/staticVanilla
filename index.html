@@ -80,7 +80,8 @@
       async function uploadFile() {
         await connection
           .invoke("SendMessage", "please work")
-          .then((e) => console.log(e));
+          .then((e) => console.log(e))
+          .then((e) => console.log("hello"));
       }
     </script>
   </body>
