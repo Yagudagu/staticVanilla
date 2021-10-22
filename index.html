@@ -66,15 +66,15 @@
       async function startAndDo() {
         await connection.start();
 
-        await sleep(2000)
-          .then(() => {
-            try {
-              await connection.invoke("SendMessage", "jacob", "please work");
-            } catch (err) {
-              console.error(err);
-            }
-          })
-          .then((e) => console.log("fuck if I know"));
+        sleep(2000);
+
+        try {
+          connection.invoke("SendMessage", "jacob", "please work");
+        } catch (err) {
+          console.error(err);
+        }
+
+        console.log("fuck if I know");
       }
 
       startAndDo();
