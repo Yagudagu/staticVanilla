@@ -50,7 +50,7 @@
 
       //Signal R Connection
 
-      const connection = new signalR.HubConnection()
+      const connection = new signalR.HubConnectionBuilder()
         .withUrl("/api")
         .withAutomaticReconnect()
         .build();
