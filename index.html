@@ -25,7 +25,10 @@
       <button type="submit">Upload file</button>
     </form>
 
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@5.0.11/dist/browser/signalr.js"></script>
+
     <script>
+      //Upload stuff
       const myForm = document.getElementById("myForm");
       const inpFile = document.getElementById("inpFile");
 
@@ -43,6 +46,21 @@
           method: "post",
           body: formData,
         }).catch(console.error);
+      });
+
+      //Signal R Connection
+
+      const connection = new signalR.HubConnection()
+        .withUrl("/api")
+        .withAutomaticReconnect()
+        .build();
+
+      connection.on("newMessage", function (msg) {
+        console.log(msg);
+      });
+
+      connection.start().then((e) => {
+        console.log(e);
       });
     </script>
   </body>
