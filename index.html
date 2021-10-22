@@ -42,14 +42,14 @@
 
         formData.append("inpFile", inpFile.files[0]);
 
-        fetch(endpoint, {
-          method: "post",
-          body: formData,
-        }).catch(console.error);
+        // fetch(endpoint, {
+        //   method: "post",
+        //   body: formData,
+        // }).catch(console.error);
       });
 
       //Signal R Connection
-
+      import axios from "axios";
       const connection = new signalR.HubConnectionBuilder()
         .withUrl("/api")
         .withAutomaticReconnect()
@@ -58,6 +58,8 @@
       connection.on("newMessage", function (msg) {
         console.log(msg);
       });
+
+      connection.invoke("SendMessage", "jacob", "please work");
 
       connection.start();
     </script>
