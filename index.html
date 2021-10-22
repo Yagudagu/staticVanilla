@@ -79,6 +79,7 @@
 
       async function uploadFile() {
         await connection
+          .then((e) => console.log("whats up"))
           .invoke("SendMessage", "please work")
           .then((e) => console.log(e))
           .then((e) => console.log("hello"));
