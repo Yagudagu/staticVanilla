@@ -59,6 +59,10 @@
       //   console.log(msg);
       // });
 
+      let sleep = (ms) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      };
+
       async function startAndDo() {
         await connection.start();
 
