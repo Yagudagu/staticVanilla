@@ -59,15 +59,19 @@
       //   console.log(msg);
       // });
 
-      connection.start();
+      async function startAndDo() {
+        await connection
+          .start()
+          .then(connection.invoke("SendMessage", "jacob", "please work"));
+      }
+
+      startAndDo();
 
       async function uploadFile() {
         await connection
           .invoke("SendMessage", "jacob", "please work")
           .then((e) => console.log(e));
       }
-
-      uploadFile();
     </script>
   </body>
 </html>
