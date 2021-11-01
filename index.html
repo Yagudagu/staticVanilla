@@ -35,57 +35,18 @@
       myForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const endpoint = "/api/httptrigger3";
+        const endpoint = "/api/Upload";
         const formData = new FormData();
 
         console.log(inpFile.files);
 
         formData.append("inpFile", inpFile.files[0]);
 
-        // fetch(endpoint, {
-        //   method: "post",
-        //   body: formData,
-        // }).catch(console.error);
+        fetch(endpoint, {
+          method: "post",
+          body: formData,
+        }).catch(console.error);
       });
-
-      //Signal R Connection
-
-      const connection = new signalR.HubConnectionBuilder()
-        .withUrl("/api")
-        .withAutomaticReconnect()
-        .build();
-
-      // connection.on("newMessage", function (msg) {
-      //   console.log(msg);
-      // });
-
-      let sleep = (ms) => {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-      };
-
-      async function startAndDo() {
-        await connection.start();
-
-        sleep(2000);
-
-        try {
-          await connection.invoke("SendMessage", "something");
-        } catch (err) {
-          console.error(err);
-        }
-      }
-
-      startAndDo();
-
-      console.log("made it here I guess");
-
-      async function uploadFile() {
-        await connection
-          .then((e) => console.log("whats up"))
-          .invoke("SendMessage", "please work")
-          .then((e) => console.log(e))
-          .then((e) => console.log("hello"));
-      }
     </script>
   </body>
 </html>
