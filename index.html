@@ -24,13 +24,21 @@
       <input type="file" id="inpFile" /><br />
       <button type="submit">Upload file</button>
     </form>
-    <div>SignalRishere</div>
-    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@5.0.11/dist/browser/signalr.js"></script>
+
+    <form class="form2" id="myForm2">
+      <input type="file" id="inpFile2" /><br />
+      <button type="submit">Upload file 2</button>
+    </form>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@5.0.11/dist/browser/signalr.js"></script> -->
 
     <script>
       //Upload stuff
       const myForm = document.getElementById("myForm");
       const inpFile = document.getElementById("inpFile");
+
+      const form2 = document.getElementById("myForm2");
+      const inpFile2 = document.getElementById("inpFile2");
 
       myForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -41,6 +49,20 @@
         console.log(inpFile.files);
 
         formData.append("inpFile", inpFile.files[0]);
+
+        fetch(endpoint, {
+          method: "post",
+          body: formData,
+        }).catch(console.error);
+      });
+
+      form2.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const endpoint = "/api/Upload2";
+        const formData = new FormData();
+
+        formData.append("inpFile", inpFile2.files[0]);
 
         fetch(endpoint, {
           method: "post",
