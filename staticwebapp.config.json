@@ -20,5 +20,11 @@
       "route": "/another.html",
       "allowedRoles": ["anonymous"]
     }
-  ]
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 301,
+      "redirect": "/.auth/login/add?post_login_redirect_uri=.referrer"
+    }
+  }
 }
