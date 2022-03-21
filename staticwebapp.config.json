@@ -3,10 +3,32 @@
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "node"
   },
+  "auth": {
+    "identityProviders": {
+      "customOpenIdConnectProviders": {
+        "jacobsProvider": {
+          "registration": {
+            "clientIdSettingName": "MY_PROVIDER_CLIENT_ID",
+            "clientCredential": {
+              "clientSecretSettingName": "MY_PROVIDER_CLIENT_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://<PROVIDER_ISSUER_URL>/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "scopes": [],
+            "loginParameterNames": []
+          }
+        }
+      }
+    }
+  }
   "routes": [
     {
       "route": "/login",
-      "redirect": "/.auth/login/aad"
+      "redirect": "/.auth/login/jacobsProvider"
     },
     {
       "route": "/logout",
